@@ -2,10 +2,13 @@
 'use client';
 
 import Link from "next/link";
+import { signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 const Dashboardcomponent = () => {
+   const {data:session} =useSession();
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
+        <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 p-8">
             {/* Header */}
             <div className="max-w-7xl mx-auto">
                 <div className="flex justify-between items-center mb-8">
@@ -17,7 +20,7 @@ const Dashboardcomponent = () => {
 
                 {/* Welcome Section */}
                 <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-                    <h2 className="text-2xl font-semibold text-gray-800 mb-2">Welcome, User!</h2>
+                    <h2 className="text-2xl font-semibold text-gray-800 mb-2">Welcome, Name:<span>{session?.user?.name}</span></h2>
                     <p className="text-gray-600">You are logged in successfully to your account.</p>
                 </div>
 

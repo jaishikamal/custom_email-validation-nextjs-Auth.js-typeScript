@@ -1,6 +1,6 @@
-import User from "../models/user";
+import User from "@/models/user";
 import { NextResponse } from "next/server";
-import { connectDB, disconnectDB } from "../lib/MongoDB";
+import { connectDB, disconnectDB } from "@/lib/MongoDB";
 import bcrypt from "bcryptjs";
 
 export const POST = async (request) => {
