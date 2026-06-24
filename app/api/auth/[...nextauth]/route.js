@@ -11,7 +11,7 @@ export const authOptions = {
     CredentialsProvider({
       name: "Credentials",
       credentials: {},
-      async authorize(credentials) {
+      async authorize(credentials) { 
         const { email, password } = credentials;
         try {
           await connectDB();
